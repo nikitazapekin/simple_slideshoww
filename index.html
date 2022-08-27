@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="image" src="https://img1.fonwall.ru/o/dn/wallpaper-creamy-cake-berries-dessert-food.jpeg?route=mid&h=750">
+<div class="rounds">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+<div class="rounds1">
+    <div class="item1 itm1"></div>
+    <div class="item1 itm2"></div>
+    <div class="item1 itm3"></div>
+</div>
+<style>
+    #image {
+        max-width: 100%;
+        width: 100%;
+        height: 500px;
+    }
+    .rounds{
+        display: flex;
+     gap: 20px;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+    .item {
+        height: 50px;
+        width: 50px;
+        background-color: black;
+        border-radius: 50%;
+
+    }
+
+</style>
+<script>
+ let count =0;
+ function nxt(){
+     let slides = ["https://img1.fonwall.ru/o/dn/wallpaper-creamy-cake-berries-dessert-food.jpeg?route=mid&h=750", "https://vsegda-pomnim.com/uploads/posts/2022-04/1649119863_12-vsegda-pomnim-com-p-zastavka-priroda-foto-18.jpg", "https://u-stena.ru/upload/iblock/41c/41ceb765bba4370bcbdc077bec685341.jpg"]
+     let slide =document.getElementById("image");
+     count++;
+
+     if(count>=slides.length){
+         count=0;
+     }
+     slide.src = slides[count]
+ }
+ setInterval(() => nxt(), 3000);
+ function balls() {
+     let balls = document.querySelectorAll(".item")
+     count++;
+     if (count >= balls.length) {
+         balls[0].style.backgroundColor = "red";
+     }
+     balls[count].style.backgroundColor = "red";
+ }
+ setInterval(() => balls(), 3000);
+</script>
+</body>
+</html>
